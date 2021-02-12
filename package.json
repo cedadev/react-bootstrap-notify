@@ -24,7 +24,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "scripts": {
-    "prepare": "yarn build",
+    "prepack": "yarn build",
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=development rollup -c -w"
   },
