@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Toast from 'react-bootstrap/Toast';
 
-import useStore from './store';
+import { useNotifications } from './context';
 
 
 const Icons = {
@@ -45,7 +45,7 @@ const Notification = ({ notification, onDismiss }) => {
 
 const Notifications = () => {
     // Get the notifications from the store
-    const notifications = useStore();
+    const { notifications, removeNotification } = useNotifications();
     // Render using a portal so that we can sit over other elements
     const [container] = useState(() => document.createElement('div'));
     useEffect(() => {
@@ -57,11 +57,11 @@ const Notifications = () => {
             style={{ position: 'fixed', top: 0, right: 0, minWidth: '350px', zIndex: 1100 }}
             className="p-3"
         >
-            {notifications.data.map(notification =>
+            {notifications.map(notification =>
                 <Notification
                     key={notification.id}
                     notification={notification}
-                    onDismiss={() => notifications.remove(notification.id)}
+                    onDismiss={() => removeNotification(notification.id)}
                 />
             )}
         </div>,

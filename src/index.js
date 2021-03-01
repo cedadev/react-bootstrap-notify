@@ -1,12 +1,16 @@
-import useStore from './store';
+import NotificationProvider, { useNotifications } from './context';
 import Notifications from './Notifications';
 
 
-/**
- * React hook that allows notifications to be sent.
- */
-export const useNotifications = () => useStore().create;
+// The hook that we export only provides the the addNotification function
+const useAddNotification = () => useNotifications().addNotification;
 
 
 // Export the React component for displaying notifications as the default export
 export default Notifications;
+
+// Export the provider and hook
+export {
+    NotificationProvider,
+    useAddNotification as useNotifications
+};
