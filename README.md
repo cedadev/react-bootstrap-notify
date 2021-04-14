@@ -19,8 +19,8 @@ yarn add react-bootstrap-notify@github:cedadev/react-bootstrap-notify
   * `useNotifications` - hook that returns a function that can be used to show a notification.
   * `Notifications` - component that renders the current notifications.
 
-A notification, as given to the `useNotifications` hook, is just an object with the following
-properties:
+A notification, as given to the function returned by the `useNotifications` hook, is just an
+object with the following properties:
 
   * `level` - the level of the notification, one of `success`, `info`, `warning` or `danger`.
   * `title` - the title of the notification, will be used in the toast header.
