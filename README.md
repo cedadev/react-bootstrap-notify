@@ -25,7 +25,8 @@ object with the following properties:
   * `level` - the level of the notification, one of `success`, `info`, `warning` or `danger`.
   * `title` - the title of the notification, will be used in the toast header.
   * `message` - the message for the notification, will be used in the toast body.
-  * `duration` - the duration of time to show the notification in ms (OPTIONAL).
+  * `duration` - the duration of time to show the notification in ms. This value is optional -
+    if not given then the notification will persist until it is closed by the user.
 
 
 ## Example
