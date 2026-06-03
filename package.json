@@ -8,9 +8,9 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "^17.0.1",
+    "react": "^17 || ^18",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17 || ^18"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
@@ -23,7 +23,6 @@
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "scripts": {
-    "prepack": "yarn build",
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=development rollup -c -w"
   },
